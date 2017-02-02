@@ -19,7 +19,7 @@ using System.Net;
 namespace StocksPortfolio
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// testing to see if save was made to github
     /// </summary>
     public partial class MainWindow : Window
     {

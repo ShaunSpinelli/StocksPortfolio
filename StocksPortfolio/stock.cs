@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StocksPortfolio
-{ // contains all relevant information on particular stock
+{ // contains all relevant information on particular stock,
     class Stock 
     {
-        string _stockName;//
+        string _stockName;// name of stock
         string _ticker;// ticker off stock, used to retrive information from yahho finance
         int _position; // amount of shares ownwed
         double _purchasePrice;//price paid for the shares
