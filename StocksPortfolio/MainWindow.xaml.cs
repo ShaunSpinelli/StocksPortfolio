@@ -25,7 +25,8 @@ namespace StocksPortfolio
     {
         public MainWindow()
         {
-            // Read() must be run on start up so that array can be made containing all current stocks, which allows the Prices to be updated (UpdatePrice())
+            // Read() must be run on start up so that array can be made containing all current stocks, 
+            //which allows the Prices to be updated (UpdatePrice())
             // and stocks to be displayed(Display())
             InitializeComponent();             
             Read();
@@ -177,7 +178,7 @@ namespace StocksPortfolio
             
         }
 
-        private void RemoveStock(string curItem)
+        private void RemoveStock(string selectedItem)
         {
             // deletes selected stock from portfolio
             StreamWriter sw = new StreamWriter("PortfolioData.txt");
@@ -186,7 +187,7 @@ namespace StocksPortfolio
             for (int i = 0; i < portfolio.Length; i++)
             {
 
-                if (curItem != portfolio[i].StockName)
+                if (selectedItem != portfolio[i].StockName)
                 {
                     sw.WriteLine(portfolio[i].StockName);
                     sw.WriteLine(portfolio[i].Ticker);
@@ -199,7 +200,7 @@ namespace StocksPortfolio
 
             sw.Close();
             Read();
-            Display();
+            Display(); // return display to show upated list without the item removed
             stockinfo.Text = null;
         }
 
@@ -252,8 +253,8 @@ namespace StocksPortfolio
             // check to see if feild is null incase it has been deleted
             if (portfoliolist.SelectedItem != null)
             {
-                string curItem = portfoliolist.SelectedItem.ToString(); 
-                DisplayStock(curItem);
+                string selectedItem = portfoliolist.SelectedItem.ToString(); 
+                DisplayStock(selectedItem);
             }
             
             
